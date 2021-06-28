@@ -1,0 +1,121 @@
+<body>
+<header class="top-banner">
+    <div class="top-banner-inner">
+        <p>Find out what's going on at Wombat Coffee each
+        month. Sign up for our newsletter:
+        <button id="open">Sign up</button>
+            </p> 
+    </div>
+</header>
+  <div class="modal" id="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-body">
+    <button class="modal-close" id="close">close</button>
+  <h2>Wombat Newsletter</h2>
+  <p>Sign up for our monthly newsletter. No spam.
+     We promise!</p>
+  <form>
+    <p>
+      <label for="email">Email address:</label>
+      <input type="text" name="email"/>
+    </p>
+    <p><button type="submit">Submit</button></p>
+  </form>
+</div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+var button = document.getElementById('open');
+var close = document.getElementById('close');
+var modal = document.getElementById('modal');
+ button.addEventListener('click', function (event) {
+  event.preventDefault();
+  modal.style.display = 'block';
+});
+close.addEventListener('click', function (event) {
+  event.preventDefault();
+  modal.style.display = 'none';
+});
+</script>
+
+
+
+<style>
+
+    :root{
+        box-sizing: border-box;
+        
+    }
+    *,
+    ::before,
+    ::after{
+        box-sizing: inherit;
+
+    }
+
+    body *+*{
+        margin-top: 1.5em;
+
+
+    }
+
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;    
+    min-height: 200vh;
+
+  }
+
+  button#open{
+    padding: 0.7em 0.5em;
+    border:lightblue 3px solid;
+  }
+
+.top-banner{
+    padding:1em 0;
+    background-color: #ffd698;
+    /* position: -webkit-sticky; */
+    position: sticky;
+    top: 0;
+
+}
+
+.top-banner-inner{
+    margin:0 auto;
+    width: 80%;
+    /* max-width: 1000px; */
+}
+
+.modal{
+    display: none;
+}
+
+.modal-backdrop{
+    position: fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: rgba(0,0,0,0.5);
+
+}
+
+.modal-body{
+    position: fixed;
+    top:2em;
+    right:20%;
+    bottom:3em;
+    left:20%;
+    background-color: white;
+    padding:2em 3em;
+    overflow:auto;
+
+
+}
+
+.modal-close{
+    cursor:pointer
+}
+</style>
